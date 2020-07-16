@@ -89,24 +89,13 @@ module "example_lb" {
   name     = "example_lb"
 }
 
-module "example" {
-  source   = "github.com/NeilDavisNPS/terraform-azurerm-windows-vm"
-  defaults = local.vm_defaults
-
-  availability_set_id                    = module.example_lb.availability_set_id
-  load_balancer_backend_address_pool_ids = { "example" = module.example_lb.load_balancer_backend_address_pool_id }
-  names                                  = ["example-01", "example-02"]
-  source_image_id                        = data.azurerm_image.windows_image
-}
 
 output "example_load_balancer_ip_address" {
   value = module.example-lb.load_balancer_private_ip_address
 }
-```
 
-```` Usage
 module "win_app" {
-   source = "../terraform-azurerm-windows-vm"
+   source = "https://github.com/NeilDavisNPS/terraform-azurerm-windows-vm"
    defaults = merge (local.app_vm_defaults,
                      {"win_admin_username" = "win4admin", "win_admin_password"="It's a secret"})
 
