@@ -8,6 +8,20 @@ The defaults object is defined in lockstep with the same object in the VM module
 
 > This is a WORK IN PROGRESS and will definitely change. Currently only supports custom images.
 
+## Disclaimer
+Shamelessly lifted from Richard Cheney's linux vm code.
+
+Rather than replicate the "vm_defaults" structure (replacing the Linux centric), for now, I have opted to 
+augment the structure at use time (see the "merge"). 
+
+An outstanding question is how to manage the supply of the windows password.
+
+* is it one password for all instances created in the module?
+* is it a random password for all instances?
+* is it one user name for all instances?
+
+
+
 ## Example
 
 The example uses a number of modules from this organisation.
@@ -94,7 +108,7 @@ output "example_load_balancer_ip_address" {
 module "win_app" {
    source = "../terraform-azurerm-windows-vm"
    defaults = merge (local.app_vm_defaults,
-                     {"win_admin_username" = "win4admin", "win_admin_password"="42*!Xyzzy*"})
+                     {"win_admin_username" = "win4admin", "win_admin_password"="It's a secret"})
 
    availability_set_name        = ""
    names                        = ["win-01"]
