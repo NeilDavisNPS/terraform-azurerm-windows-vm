@@ -63,8 +63,8 @@ resource "azurerm_resource_group" "example" {
   name     = "vmss-example"
   location = "West Europe"
   tags = {
-    owner = "NPS",
-    dept  = "SSPP"
+    owner = "ACME",
+    dept  = "Research"
   }
 }
 
