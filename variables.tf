@@ -117,7 +117,7 @@ variable "win_admin_username" {
 }
 variable "win_admin_password" {
  description = "Admin password.. this is insecure"
- default = "YouShouldKnowBetter4!!"
+ default = ""
 }
 
 
