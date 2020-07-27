@@ -40,11 +40,6 @@ variable "defaults" {
     vm_size              = string
     storage_account_type = string
     admin_username       = string
-    admin_ssh_public_key = string
-    additional_ssh_keys = list(object({
-      username   = string
-      public_key = string
-    }))
     subnet_id            = string
     boot_diagnostics_uri = string
     win_admin_username       = string
@@ -56,8 +51,6 @@ variable "defaults" {
     tags                 = {}
     vm_size              = null
     storage_account_type = null
-    admin_username       = null
-    admin_ssh_public_key = null
     additional_ssh_keys = null
     subnet_id            = null
     boot_diagnostics_uri = null
