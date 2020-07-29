@@ -51,7 +51,6 @@ variable "defaults" {
     tags                 = {}
     vm_size              = null
     storage_account_type = null
-    additional_ssh_keys = null
     subnet_id            = null
     boot_diagnostics_uri = null
     win_admin_username       = null
