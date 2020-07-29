@@ -39,7 +39,6 @@ variable "defaults" {
     tags                 = map(string)
     vm_size              = string
     storage_account_type = string
-    admin_username       = string
     subnet_id            = string
     boot_diagnostics_uri = string
     win_admin_username       = string
